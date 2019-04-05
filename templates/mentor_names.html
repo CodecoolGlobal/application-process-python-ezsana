@@ -1,11 +1,18 @@
 {% extends "layout.html" %}
 
 {% block content %}
-    <div id="mentors">
+    <table>
+        <tr>
+            <th>First name</th>
+            <th>Last name</th>
+        </tr>
         {% for mentor_name in mentor_names %}
-            {{ mentor_name.first_name + " " + mentor_name.last_name }}<br/>
-        {% endfor%}
-    </div>
-
+        <tr>
+           <td>{{ mentor_name.first_name }}</td>
+            <td>{{ mentor_name.last_name }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
     {% include 'footer.html' %}
 {% endblock %}

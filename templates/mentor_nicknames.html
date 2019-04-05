@@ -1,10 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "layout.html" %}
 
-</body>
-</html>
+{% block content %}
+    <table>
+        <tr>
+            <th>Nicknames</th>
+        </tr>
+        {% for mentor_nickname in mentor_nicknames %}
+        <tr>
+           <td>{{ mentor_nickname.nick_name }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    {% include 'footer.html' %}
+{% endblock %}
+
+<!--
+<div id="mentors">
+        {% for mentor_nickname in mentor_nicknames %}
+            {{ mentor_nickname.nick_name }}<br/>
+        {% endfor%}
+    </div>
+-->

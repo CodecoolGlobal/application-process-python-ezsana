@@ -1,10 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "layout.html" %}
 
-</body>
-</html>
+{% block content %}
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Phone number</th>
+            <th>E-mail</th>
+            <th>Application code</th>
+        </tr>
+        {% for data in new_guy %}
+        <tr>
+            {% for d in data %}
+                <td>{{ data[d] }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    {% include 'footer.html' %}
+{% endblock %}

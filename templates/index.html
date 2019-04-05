@@ -1,5 +1,13 @@
 {% extends "layout.html" %}
 
 {% block content %}
-    <a href="{{ url_for('mentor_names') }}">Mentor names</a>
+    <ol>
+        <li><a href="{{ url_for('mentor_names') }}">Mentor names</a></li>
+        <li><a href="{{ url_for('mentor_nicknames') }}">Mentor nicknames</a></li>
+        <li><a href="{{ url_for('carol') }}">Carol</a></li>
+        <li><a href="{{ url_for('adipiscingenimmi') }}">Girl with @adipiscingenimmi</a></li>
+        <li><a href="{{ url_for('markus') }}">Markus Schaffarzyk</a></li>
+        <li><a href="{{ url_for('jemima') }}">Jemima phone number</a></li>
+    </ol>
+    <p><a href="#">Forms for practice</a></p>
 {% endblock %}

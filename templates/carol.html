@@ -1,10 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "layout.html" %}
 
-</body>
-</html>
+{% block content %}
+    <table>
+        <tr>
+            <th colspan="2">Name</th>
+            <th>Phone number</th>
+        </tr>
+        {% for data in girl_with_hat %}
+        <tr>
+            <td colspan="2">{{ data.first_name}} {{ data.last_name }}</td>
+            <td>{{ data.phone_number }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    {% include 'footer.html' %}
+{% endblock %}
