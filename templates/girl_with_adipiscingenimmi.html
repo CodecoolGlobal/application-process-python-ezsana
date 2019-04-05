@@ -1,0 +1,16 @@
+{% block content %}
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Phone number</th>
+        </tr>
+        {% for data in girl_with_email %}
+        <tr>
+            <td>{{ data.fullname }}</td>
+            <td>{{ data.phone_number }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    {% include 'footer.html' %}
+{% endblock %}
