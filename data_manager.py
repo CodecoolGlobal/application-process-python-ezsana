@@ -133,3 +133,44 @@ def contacts(cursor):
                     on schools.contact_person = mentors.id """)
     contact = cursor.fetchall()
     return contact
+
+# Applicants page [ /applicants ]
+# On this page you should show the result of a query that returns the first
+# name and the code of the applicants plus the creation_date of the application
+# (joining with the applicants_mentors table) ordered by the creation_date in descending order
+# BUT only for applications later than 2016-01-01
+# columns: applicants.firstname, applicants.application_code, applicants_mentors.creation_date_applicants_pkey
+
+
+@database_common.connection_handler
+def applicant(cursor):
+    cursor.execute("""
+                    select applicants.first_name, applicants.application_code, applicants_mentors.creation_date
+                    from applicants
+                    left join applicants_mentors
+                    on applicants.id = applicants_mentors.applicant_id
+                    where creation_date > '2016-01-01'
+                    order by applicants_mentors.creation_date""")
+    create = cursor.fetchall()
+    return create
+
+# Applicants and mentors page [ /applicants-and-mentors ]
+# On this page you should show the result of a query that returns the first name and the
+# code of the applicants plus the name of the assigned mentor
+# (joining through the applicants_mentors table) ordered by the applicants id column
+# Show all the applicants, even if they have no assigned mentor in the database!
+# In this case use the string "No data" instead of the mentor name.
+# columns: applicants.firstname, applicants.application_code, mentors.first_name, mentors.last_name_
+
+@database_common.connection_handler
+def app_and_mentors(cursor):
+    cursor.execute("""
+                    select applicants.first_name as a_first_name, applicants.application_code, mentors.first_name, mentors.last_name
+                    from applicants
+                    left join applicants_mentors
+                    on applicants.id = applicants_mentors.applicant_id
+                    left join mentors
+                    on applicants_mentors.mentor_id = mentors.id
+                    order by applicants.id""")
+    apps = cursor.fetchall()
+    return apps

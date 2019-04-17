@@ -1,6 +1,7 @@
 {% extends "layout.html" %}
 
 {% block content %}
+    <h1><span class="red">Codecool</span> <span id="blue">application</span><span class="red"> process</span></h1>
     <ol>
         <li><a href="{{ url_for('mentor_names') }}">Mentor names</a></li>
         <li><a href="{{ url_for('mentor_nicknames') }}">Mentor nicknames</a></li>
@@ -15,5 +16,7 @@
         <li><a href = {{ url_for('all_schools') }}>All school page</a></li>
         <li><a href = {{ url_for('mentors_by_country') }}>Mentors by country page</a></li>
         <li><a href = {{ url_for('contacts') }}>Contacts page</a></li>
+        <li><a href = {{ url_for('applicants') }}>Applicants page</a></li>
+        <li><a href = {{ url_for('app_and_ment') }}>Applicants and mentors page</a></li>
     </ol>
 {% endblock %}

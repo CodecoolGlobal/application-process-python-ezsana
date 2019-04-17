@@ -66,6 +66,18 @@ def contacts():
     schools_contact = data_manager.contacts()
     return render_template('contacts.html', schools_contact=schools_contact)
 
+@app.route('/applicants')
+def applicants():
+    app = data_manager.applicant()
+    print(app)
+    return render_template('applicants.html', app=app)
+
+
+@app.route('/applicants-and-mentors')
+def app_and_ment():
+    am = data_manager.app_and_mentors()
+    print(am)
+    return render_template('applicants-mentors.html', am=am)
 
 if __name__ == '__main__':
     app.run(debug=True)
