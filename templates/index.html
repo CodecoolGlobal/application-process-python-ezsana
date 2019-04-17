@@ -9,5 +9,11 @@
         <li><a href="{{ url_for('markus') }}">Markus Schaffarzyk</a></li>
         <li><a href="{{ url_for('jemima') }}">Jemima phone number</a></li>
     </ol>
-    <p><a href="#">Forms for practice</a></p>
+    <h3>Application process 2.0</h3>
+    <ol>
+        <li><a href = {{ url_for('mentors_schools') }}>Mentors and schools page</a></li>
+        <li><a href = {{ url_for('all_schools') }}>All school page</a></li>
+        <li><a href = {{ url_for('mentors_by_country') }}>Mentors by country page</a></li>
+        <li><a href = {{ url_for('contacts') }}>Contacts page</a></li>
+    </ol>
 {% endblock %}

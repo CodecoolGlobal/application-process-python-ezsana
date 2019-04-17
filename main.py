@@ -46,6 +46,26 @@ def jemima():
     girl = data_manager.jemima()
     return render_template('jemima.html', girl=girl)
 
+@app.route('/mentors')
+def mentors_schools():
+    mentors_and_schools = data_manager.m_s()
+    return render_template('mentors.html', mentors_and_schools=mentors_and_schools)
+
+@app.route('/all-school')
+def all_schools():
+    all_of_schools = data_manager.all_school()
+    return render_template('schools.html', all_of_schools=all_of_schools)
+
+@app.route('/mentors-by-country')
+def mentors_by_country():
+    m_by_c = data_manager.by_country()
+    return render_template('countries_mentors.html', m_by_c=m_by_c)
+
+@app.route('/contacts')
+def contacts():
+    schools_contact = data_manager.contacts()
+    return render_template('contacts.html', schools_contact=schools_contact)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
