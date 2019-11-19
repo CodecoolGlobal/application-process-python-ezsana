@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <h1>Records</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Phone number</th>
+            <th>E-mail</th>
+            <th>Application code</th>
+        </tr>
+        <tr>
+            {% for rec in record %}
+                <td>{{ rec['id'] }}</td>
+                <td>{{ rec['first_name'] }}</td>
+                <td>{{ rec['last_name'] }}</td>
+                <td>{{ rec['phone_number'] }}</td>
+                <td>{{ rec['email'] }}</td>
+                <td>{{ rec['application_code'] }}</td>
+            {% endfor %}
+        </tr>
+    </table>
+    {% include 'footer.html' %}
+{% endblock %}

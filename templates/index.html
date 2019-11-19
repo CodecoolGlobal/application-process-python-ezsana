@@ -1,5 +1,87 @@
 {% extends "layout.html" %}
 
 {% block content %}
-    <a href="{{ url_for('mentor_names') }}">Mentor names</a>
+    <h1>Database of Codecool</h1>
+    <ol>
+        <li>Which table would you like to see?
+            <form action="/" method="post">
+                <label for="m">mentors or applicants</label>
+                <input name="choose" id="m">
+                <input type="submit" value="Submit">
+            </form>
+        </li>
+        <li>Mentors nicknames
+            <form action="/" method="post">
+                <label for="nick">Budapest or Miskolc</label>
+                <input name="nickn" id="nick">
+                <input type="submit" value="Submit">
+            </form>
+        </li>
+        <li>Information about applicants
+            <form action="/" method="post">
+                <label for="id">ID</label>
+                <input type="radio" name="id" id="id"><br>
+                <label for="fn">First name</label>
+                <input type="radio" name="first_name" id="fn"><br>
+                <label for="ln">Last name</label>
+                <input type="radio" name="last_name" id="ln"><br>
+                <label for="phn">Phone number</label>
+                <input type="radio" name="phone_number" id="phn"><br>
+                <label for="em">E-mail</label>
+                <input type="radio" name="email" id="em"><br>
+                <label for="app">Application code</label>
+                <input type="radio" name="application_code" id="app"><br>
+                <label for="i">Key word</label>
+                <input name="info" id="i"><br>
+                <input type="submit" value="Submit">
+            </form>
+        </li>
+        <li>Insert new applicant to database
+            <form action="/" method="post">
+                <label for="id">ID</label>
+                <input name="id" id="id"><br>
+                <label for="fn">First name</label>
+                <input name="first_name" id="fn"><br>
+                <label for="ln">Last name</label>
+                <input name="last_name" id="ln"><br>
+                <label for="phn">Phone number</label>
+                <input name="phone_number" id="phn"><br>
+                <label for="em">E-mail</label>
+                <input name="e_mail" id="em"><br>
+                <label for="app">Application code</label>
+                <input name="application_code" id="app"><br>
+                <input type="submit" value="Submit">
+            </form>
+        </li>
+        <li>Which applicant's record would you like to see?
+            <form action="/" method="post">
+                <label for="r">Application code</label>
+                <input id="r" name="record_for_applicant">
+                <input type="submit" value="Submit">
+            </form>
+        </li>
+        <li id="up">Update applicants' record
+            <form action="/" method="post">
+                <span id="update">Whose data would you like to change?</span><br>
+                <label for="ua1">First name</label>
+                <input id="ua1" name="update_f_n"><br>
+                <label for="ua2">Last name</label>
+                <input id="ua2" name="update_l_n"><br>
+                <label for="ua3">Which data would you like to change?</label>
+                <input id="ua3" name="update_which"><br>
+                <label for="ua4">What is the new value of that data?</label>
+                <input id="ua4" name="update_data"><br>
+                <input type="submit" value="Submit">
+            </form>
+        </li>
+        <li>Cancellation
+            <form action="/" method="post">
+                <label for="cancel">Cancel by e-mail</label>
+                <input id="cancel" name="cancel_applicant" value="E-mail">
+                <input type="submit" value="Submit">
+            </form>
+        </li>
+    </ol>
 {% endblock %}
+
+what, for_what, person_first_name, person_last_name):

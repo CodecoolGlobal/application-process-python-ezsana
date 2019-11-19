@@ -4,5 +4,53 @@ body {
 }
 
 .content-wrapper {
-    padding: 10%;
+    padding: 5%;
+    padding-top: 2%;
+    margin: 0 auto;
+    border: 1px dotted white;
 }
+
+table {
+    margin: 0 auto;
+}
+
+table, th, tr, td {
+    border: 1px solid lightblue;
+    border-collapse: collapse;
+    padding: 7px;
+    margin: 0 auto;
+    text-align: center;
+}
+td {
+    text-align: justify;
+}
+
+ul, li {
+    padding: 10px;
+    font-weight: bolder;
+}
+
+label, input {
+    margin: 5px;
+    font-weight: normal;
+}
+
+input {
+    background-color: moccasin;
+}
+
+footer {
+    margin-top: 15px;
+}
+
+ol #up form #update {
+    font-weight: normal;
+    font-style: oblique;
+}
+
+
+h1 {
+    text-align: center;
+    color: darkred;
+}
+

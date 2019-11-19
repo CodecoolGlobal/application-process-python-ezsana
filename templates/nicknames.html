@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <h1>Nicknames of mentors</h1>
+    <table>
+        <tr>
+            <th>Full name</th>
+            <th>Nickname</th>
+        </tr>
+        {% for req in requested_datas %}
+            <tr>
+                <td>{{ req['fullname'] }}</td>
+                <td>{{ req['nick_name'] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    {% include 'footer.html' %}
+{% endblock %}
