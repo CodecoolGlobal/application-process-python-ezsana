@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <table>
+        <tr>
+            <th>First name of the applicant</th>
+            <th>Applicant application code</th>
+            <th>Mentor first name</th>
+            <th>Mentor last name</th>
+        </tr>
+        {% for a in am%}
+            <tr>
+                <td>{{ a['a_first_name'] }}</td>
+                <td>{{ a['application_code'] }}</td>
+                {% if a['first_name'] %}
+                    <td>{{ a['first_name'] }}</td>
+                {% else %}
+                    <td>No data</td>
+                {% endif %}
+                {% if a['last_name'] %}
+                    <td>{{ a['last_name'] }}</td>
+                {% else %}
+                    <td>No data</td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+    </table>
+    {% include 'footer.html' %}
+{% endblock %}

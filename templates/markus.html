@@ -3,13 +3,18 @@
 {% block content %}
     <table>
         <tr>
+            <th>ID</th>
             <th>First name</th>
             <th>Last name</th>
+            <th>Phone number</th>
+            <th>E-mail</th>
+            <th>Application code</th>
         </tr>
-        {% for mentor_name in mentor_names %}
+        {% for data in new_guy %}
         <tr>
-           <td>{{ mentor_name.first_name }}</td>
-            <td>{{ mentor_name.last_name }}</td>
+            {% for d in data %}
+                <td>{{ data[d] }}</td>
+            {% endfor %}
         </tr>
         {% endfor %}
     </table>

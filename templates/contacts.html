@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <table>
+        <tr>
+            <th>School name</th>
+            <th>Contact person</th>
+        </tr>
+        {% for contact in schools_contact %}
+            <tr>
+                <td>{{ contact['name'] }}</td>
+                <td>{{ contact['fullname'] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    {% include 'footer.html' %}
+{% endblock %}

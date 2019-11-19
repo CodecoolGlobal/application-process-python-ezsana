@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <table>
+        <tr>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>School name</th>
+            <th>School country</th>
+        </tr>
+        {% for data in all_of_schools %}
+            <tr>
+                {%  if data['first_name']  %}
+                    <td>{{ data['first_name'] }}</td>
+                {% else %}
+                    <td>No data</td>
+                {% endif %}
+                {%  if data['last_name']  %}
+                    <td>{{ data['last_name'] }}</td>
+                {% else %}
+                    <td>No data</td>
+                {% endif %}
+                <td>{{ data['name'] }}</td>
+                <td>{{ data['country'] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    {% include 'footer.html' %}
+{% endblock %}

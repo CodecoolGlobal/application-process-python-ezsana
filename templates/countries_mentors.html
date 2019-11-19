@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <table>
+        <tr>
+            <th>Country</th>
+            <th>Number of mentors</th>
+        </tr>
+        {% for mentors in m_by_c %}
+            <tr>
+                <td>{{ mentors['country'] }}</td>
+                <td>{{ mentors['count'] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    {% include 'footer.html' %}
+{% endblock %}

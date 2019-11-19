@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <table>
+        <tr>
+            <th>First name</th>
+            <th>Application code</th>
+            <th>Creation date</th>
+        </tr>
+        {% for a in app%}
+            <tr>
+                <td>{{ a['first_name'] }}</td>
+                <td>{{ a['application_code'] }}</td>
+                <td>{{ a['creation_date'] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    {% include 'footer.html' %}
+{% endblock %}

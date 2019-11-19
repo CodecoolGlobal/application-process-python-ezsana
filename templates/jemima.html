@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <table>
+        <tr>
+            <th>Phone number</th>
+        </tr>
+        {% for data in girl %}
+        <tr>
+            <td>{{ data.phone_number }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    {% include 'footer.html' %}
+{% endblock %}
